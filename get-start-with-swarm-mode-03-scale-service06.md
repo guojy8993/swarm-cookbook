@@ -29,7 +29,7 @@ CONTAINER ID   IMAGE    COMMAND    CREATED  STATUS  PORTS  NAMES
 c743608a776c  alpine:latest   "ping 127.0.0.1"   6 minutes ago  Up 6 minutes  helloworld.3.92qwnyiknjrslf3mz03531pu9
 
 [root@worker2 ~]# docker ps -a
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+CONTAINER ID        IMAGE      COMMAND    CREATED   STATUS      PORTS   NAMES
 6eeca285a8d9 alpine:latest "ping 127.0.0.1" 6 minutes ago Up 6 minutes  helloworld.2.9gyfqk5q02lp3n7358zp2hymn
 ```
 
