@@ -2,9 +2,9 @@
 
 > 请确保阅读本文档前你已经成功完成"create swarm"的操作,建立起了一个manager节点的swarm
 
-1. ssh登录到其中一个work节点,例如 worker1.
+ssh登录到其中一个work节点,例如 worker1.
 
-2. 运行"docker swarm init"执行结果提供的加入集群命令,以添加当前节点到swarm集群.
+运行"docker swarm init"执行结果提供的加入集群命令,以添加当前节点到swarm集群.
 
 ```
 [root@worker1 ~]# docker swarm join \
@@ -14,6 +14,7 @@ This node joined a swarm as a worker.
 ```
 
 如果你已经遗忘了该命令行,可以去manager节点重新查询:
+
 ```
 [root@manager ~]# docker swarm join-token worker
 To add a worker to this swarm, run the following command:
@@ -25,9 +26,10 @@ To add a worker to this swarm, run the following command:
 [root@manager ~]#
 ```
 
-3. 同理添加worker2节点.
+同理添加worker2节点.
 
-4. 登录到swarm manager节点查询集群节点信息
+登录到swarm manager节点查询集群节点信息
+
 ```
 [root@manager ~]# docker node ls
 ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
