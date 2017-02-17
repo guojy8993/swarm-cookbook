@@ -15,7 +15,7 @@
 
 > 选项"--replicas"指定以1副本运行该服务
 
-> 选项"ping docker.com"指定启动容器执行的命令
+> 选项"ping 127.0.0.1"指定启动容器执行的命令
 
 运行"docker service ls"查看运行中的服务的列表:
 
