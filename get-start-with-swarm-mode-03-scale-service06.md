@@ -25,10 +25,21 @@ cge76a3iqjhx3b9s3zhn7aka5  helloworld.1  alpine  manager  Running        Running
 
 ```
 [root@worker1 ~]# docker ps -a
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-c743608a776c        alpine:latest       "ping 127.0.0.1"    6 minutes ago       Up 6 minutes                            helloworld.3.92qwnyiknjrslf3mz03531pu9
+CONTAINER ID   IMAGE    COMMAND    CREATED  STATUS  PORTS  NAMES
+c743608a776c  alpine:latest   "ping 127.0.0.1"   6 minutes ago  Up 6 minutes  helloworld.3.92qwnyiknjrslf3mz03531pu9
 
 [root@worker2 ~]# docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-6eeca285a8d9        alpine:latest       "ping 127.0.0.1"    6 minutes ago       Up 6 minutes                            helloworld.2.9gyfqk5q02lp3n7358zp2hymn
+6eeca285a8d9 alpine:latest "ping 127.0.0.1" 6 minutes ago Up 6 minutes  helloworld.2.9gyfqk5q02lp3n7358zp2hymn
+```
+
+反向弹性缩小集群:
+```
+[root@manager ~]# docker service scale 6syg1lc6xfr8=2
+6syg1lc6xfr8 scaled to 2
+[root@manager ~]# docker service ps 6syg1lc6xfr8
+ID                         NAME          IMAGE   NODE     DESIRED STATE  CURRENT STATE        ERROR
+cge76a3iqjhx3b9s3zhn7aka5  helloworld.1  alpine  manager  Shutdown   Shutdown about a minute ago  
+9gyfqk5q02lp3n7358zp2hymn  helloworld.2  alpine  worker2  Running    Running 11 minutes ago       
+92qwnyiknjrslf3mz03531pu9  helloworld.3  alpine  worker1  Running    Running 11 minutes ago
 ```
